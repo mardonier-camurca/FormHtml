@@ -4,7 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
+    <script>
+        function openTab(event, tabName) {
+            const tabContents = document.querySelectorAll(".tab-content");
+            const tabButtons = document.querySelectorAll(".tab button");
+
+            // Esconde todo o conteúdo das abas
+            tabContents.forEach(content => content.classList.remove("active"));
+
+            // Remove a classe 'active' de todos os botões
+            tabButtons.forEach(button => button.classList.remove("active"));
+
+            // Exibe o conteúdo da aba selecionada e ativa o botão correspondente
+            document.getElementById(tabName).classList.add("active");
+            event.currentTarget.classList.add("active");
+        }
+    </script>
 <body>
     <div class="formDadosPessoais">
         <div class="main_painel">
@@ -52,78 +69,130 @@
 
 
         <div>
-            h
+            <div class="tab">
+                <button class="active" onclick="openTab(event, 'dados-pessoais')">Dados Pessoais</button>
+                <button onclick="openTab(event, 'documentos')">Documentos</button>
+                <button onclick="openTab(event, 'dados-complementares')">Dados Complementares</button>
+                <button onclick="openTab(event, 'revisar-dados')">Revisar Dados</button>
+            </div>
+        
+            <div id="dados-pessoais" class="tab-content active">
+                <h2>Dados Pessoais</h2>
+                <div>
+                    <form class="dados-pessoais">
+                        <div>
+                            <label for="nome-completo">Nome Completo:</label><br>
+                            <input type="text" id="nome-completo" name="nome-completo" required><br>
+                    
+                            <label for="sexo">Sexo:</label><br>
+                            <select id="sexo" name="sexo">
+                                <option value=""></option>
+                                <option value="masculino">Masculino</option>
+                                <option value="feminino">Feminino</option>
+                                <option value="nao-especificado">Não especificado</option>
+                            </select><br><br>
+                        </div>
+                
+                        <label for="filiacao1">Filiação 1:</label><br>
+                        <input type="text" id="filiacao1" name="filiacao1"><br><br>
+                        <label for="sexo">Sexo:</label><br>
+                        <select id="sexoFilial1" name="sexo">
+                            <option value="masculino">Masculino</option>
+                            <option value="feminino">Feminino</option>
+                            <option value="nao-especificado">Não especificado</option>
+                        </select><br><br>
+                
+                        <label for="filiacao2">Filiação 2:</label><br>
+                        <input type="text" id="filiacao2" name="filiacao2"><br><br>
+                        <label for="sexo">Sexo:</label><br>
+                        <select id="sexoFilial2" name="sexo">
+                            <option value="masculino">Masculino</option>
+                            <option value="feminino">Feminino</option>
+                            <option value="nao-especificado">Não especificado</option>
+                        </select><br><br>
+                
+                        <label for="data-nascimento">Data de Nascimento:</label><br>
+                        <input type="text" id="data-nascimento" name="data-nascimento" placeholder="__/__/____" required><br><br>
+                
+                        <label for="emancipado">
+                            <input type="checkbox" id="emancipado" name="emancipado"> Emancipado
+                        </label><br><br>
+                
+                        <label for="adocao-internacional">
+                            <input type="checkbox" id="adocao-internacional" name="adocao-internacional"> Adoção Internacional
+                        </label><br><br>
+            
+                        <div>
+                            <label for="raca">Raça ou cor*:</label><br>
+                            <select id="Raca" name="raca">
+                                <option value=""></option>
+                                <option value="amarela">Amarela</option>
+                                <option value="branca">Branca</option>
+                                <option value="indigina">Indígina</option>
+                                <option value="parda">Parda</option>
+                                <option value="preta">Preta</option>
+                                <option value="outras">Outras</option>
+                                <option value="nao desejo declarar">Não desejo declarar</option>
+                            </select><br><br>
+                
+                            <label for="estadoCivil">Estado civil:</label><br>
+                            <select id="Estado civil" name="estadoCivil">
+                                <option value=""></option>
+                                <option value="solteriro">Solteiro(a)</option>
+                                <option value="casado">Casado(a)</option>
+                                <option value="viuvo">Viúvo(a)</option>
+                                <option value="serparado">Separado(a) judicialmente</option>
+                                <option value="divorciado">Divorciado(a)</option>
+                                <option value="uniaoEstavel">Unição estável</option>
+                            </select><br>
+                        </div>
+                        <div>
+                            <label for="nacionalidde">Nacionalidde:</label><br>
+                            <select id="nacionalidde" name="nacionalidade">
+                                <option value="brasil">Brasil</option>
+                                <option value="outros">Outros paises</option>
+                            </select><br>
+                            <p>para brasileiros com múltipla nacionalidade, selectionar Brasil</p>
+                        </div>
+                        <h2>Local de nascimento</h2>
+                        <div>
+                            <label for="nacionalidde">País*:</label><br>
+                            <select id="nacionalidde" name="nacionalidade">
+                                <option value="brasil">Brasil</option>
+                                <option value="outros">Outros paises</option>
+                            </select><br>
+                            <label for="nacionalidde">UF*:</label><br>
+                            <select id="nacionalidde" name="nacionalidade">
+                                <option value=""></option>
+                                <option value="Ceara">Ceará</option>
+                                <option value="Piauí">Piauí</option>
+                            </select>
+                            <h2>Nomes anteriores</h2>
+                            <div>
+                                <label for="nome-anterior">Nome anteriores:</label><br>
+                                <input type="text" id="nome-anterior" name="nome-anterior"><br>
+
+                                <label for="motivo">Motivo da mudança:</label><br>
+                            <select id="motivo" name="motivo">
+                                <option value=""></option>
+                                <option value="Ceara">Ceará</option>
+                                <option value="Piauí">Piauí</option>
+                            </select>
+                            
+
+
+
+                            </div>
+
+                            <button type="submit">Adicionar</button>
+                        </div>
+                        <button type="submit">PRÓXIMO</button>
+                    </form>
+
+                </div>                
         </div>
 
 
-        <form>
-            <div>
-                <label for="nome-completo">Nome Completo:</label><br>
-                <input type="text" id="nome-completo" name="nome-completo" required><br><br>
-        
-                <label for="sexo">Sexo:</label><br>
-                <select id="sexo" name="sexo">
-                    <option value=""></option>
-                    <option value="masculino">Masculino</option>
-                    <option value="feminino">Feminino</option>
-                    <option value="nao-especificado">Não especificado</option>
-                </select><br><br>
-            </div>
-    
-            <label for="filiacao1">Filiação 1:</label><br>
-            <input type="text" id="filiacao1" name="filiacao1"><br><br>
-            <label for="sexo">Sexo:</label><br>
-            <select id="sexoFilial1" name="sexo">
-                <option value="masculino">Masculino</option>
-                <option value="feminino">Feminino</option>
-                <option value="nao-especificado">Não especificado</option>
-            </select><br><br>
-    
-            <label for="filiacao2">Filiação 2:</label><br>
-            <input type="text" id="filiacao2" name="filiacao2"><br><br>
-            <label for="sexo">Sexo:</label><br>
-            <select id="sexoFilial2" name="sexo">
-                <option value="masculino">Masculino</option>
-                <option value="feminino">Feminino</option>
-                <option value="nao-especificado">Não especificado</option>
-            </select><br><br>
-    
-            <label for="data-nascimento">Data de Nascimento:</label><br>
-            <input type="text" id="data-nascimento" name="data-nascimento" placeholder="__/__/____" required><br><br>
-    
-            <label for="emancipado">
-                <input type="checkbox" id="emancipado" name="emancipado"> Emancipado
-            </label><br><br>
-    
-            <label for="adocao-internacional">
-                <input type="checkbox" id="adocao-internacional" name="adocao-internacional"> Adoção Internacional
-            </label><br><br>
-
-            <label for="raca">Raça ou cor*:</label><br>
-            <select id="Raca" name="raca">
-                <option value=""></option>
-                <option value="amarela">Amarela</option>
-                <option value="branca">Branca</option>
-                <option value="indigina">Indígina</option>
-                <option value="parda">Parda</option>
-                <option value="preta">Preta</option>
-                <option value="outras">Outras</option>
-                <option value="nao desejo declarar">Não desejo declarar</option>
-            </select><br><br>
-
-            <label for="estadoCivil">Estado civil:</label><br>
-            <select id="Estado civil" name="estadoCivil">
-                <option value=""></option>
-                <option value="solteriro">Solteiro(a)</option>
-                <option value="casado">Casado(a)</option>
-                <option value="viuvo">Viúvo(a)</option>
-                <option value="serparado">Separado(a) judicialmente</option>
-                <option value="divorciado">Divorciado(a)</option>
-                <option value="uniaoEstavel">Unição estável</option>
-            </select><br><br>
-    
-            <button type="submit">Enviar</button>
-        </form>
     
 
 
