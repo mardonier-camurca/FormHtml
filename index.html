@@ -79,51 +79,52 @@
             <div id="dados-pessoais" class="tab-content active">
                 <h2>Dados Pessoais</h2>
                 <div>
-                    <form class="dados-pessoais">
-                        <div>
-                            <label for="nome-completo">Nome Completo:</label><br>
-                            <input type="text" id="nome-completo" name="nome-completo" required><br>
-                    
-                            <label for="sexo">Sexo:</label><br>
+                    <fieldset>
+                        <legend><strong>Dados Pessoais</strong></legend>
+                        <form class="dados-pessoais">
+                        
+                            <label for="nome-completo">Nome Completo:</label><input type="text" id="nome-completo" name="nome-completo" required>
+                            <label for="sexo">Sexo:</label>
                             <select id="sexo" name="sexo">
                                 <option value=""></option>
                                 <option value="masculino">Masculino</option>
                                 <option value="feminino">Feminino</option>
                                 <option value="nao-especificado">Não especificado</option>
-                            </select><br><br>
-                        </div>
+                            </select><br>
+                        
                 
-                        <label for="filiacao1">Filiação 1:</label><br>
-                        <input type="text" id="filiacao1" name="filiacao1"><br><br>
-                        <label for="sexo">Sexo:</label><br>
+                        <label for="filiacao1">Filiação 1:</label>
+                        <input type="text" id="filiacao1" name="filiacao1">
+                        <label for="sexo">Sexo:</label>
                         <select id="sexoFilial1" name="sexo">
+                            <option value=""></option>
                             <option value="masculino">Masculino</option>
                             <option value="feminino">Feminino</option>
                             <option value="nao-especificado">Não especificado</option>
-                        </select><br><br>
+                        </select><br>
                 
-                        <label for="filiacao2">Filiação 2:</label><br>
-                        <input type="text" id="filiacao2" name="filiacao2"><br><br>
-                        <label for="sexo">Sexo:</label><br>
+                        <label for="filiacao2">Filiação 2:</label>
+                        <input type="text" id="filiacao2" name="filiacao2">
+                        <label for="sexo">Sexo:</label>
                         <select id="sexoFilial2" name="sexo">
+                            <option value=""></option>
                             <option value="masculino">Masculino</option>
                             <option value="feminino">Feminino</option>
                             <option value="nao-especificado">Não especificado</option>
-                        </select><br><br>
+                        </select><br>
                 
-                        <label for="data-nascimento">Data de Nascimento:</label><br>
-                        <input type="text" id="data-nascimento" name="data-nascimento" placeholder="__/__/____" required><br>
+                        <label for="data-nascimento">Data de Nascimento:</label>
+                        <input type="text" id="data-nascimento" name="data-nascimento" placeholder="__/__/____" required>
                 
                         <label for="emancipado">
                             <input type="checkbox" id="emancipado" name="emancipado"> Emancipado
-                        </label><br><br>
+                        </label>
                 
                         <label for="adocao-internacional">
                             <input type="checkbox" id="adocao-internacional" name="adocao-internacional"> Adoção Internacional
-                        </label><br><br>
-            
-                        <div>
-                            <label for="raca">Raça ou cor*:</label><br>
+                        </label><br>
+                        
+                            <label for="raca">Raça ou cor*:</label>
                             <select id="Raca" name="raca">
                                 <option value=""></option>
                                 <option value="amarela">Amarela</option>
@@ -133,9 +134,9 @@
                                 <option value="preta">Preta</option>
                                 <option value="outras">Outras</option>
                                 <option value="nao desejo declarar">Não desejo declarar</option>
-                            </select><br><br>
+                            </select>
                 
-                            <label for="estadoCivil">Estado civil:</label><br>
+                            <label for="estadoCivil">Estado civil:</label>
                             <select id="Estado civil" name="estadoCivil">
                                 <option value=""></option>
                                 <option value="solteriro">Solteiro(a)</option>
@@ -144,24 +145,23 @@
                                 <option value="serparado">Separado(a) judicialmente</option>
                                 <option value="divorciado">Divorciado(a)</option>
                                 <option value="uniaoEstavel">Unição estável</option>
-                            </select><br>
-                        </div>
-                        <div>
-                            <label for="nacionalidde">Nacionalidde:</label><br>
+                            </select>
+                        
+                            <label for="nacionalidde">Nacionalidde:</label>
                             <select id="nacionalidde" name="nacionalidade">
                                 <option value="brasil">Brasil</option>
                                 <option value="outros">Outros paises</option>
                             </select><br>
                             <p>para brasileiros com múltipla nacionalidade, selectionar Brasil</p>
-                        </div>
+                        
                         <h2>Local de nascimento</h2>
-                        <div>
-                            <label for="nacionalidde">País*:</label><br>
+                        
+                            <label for="nacionalidde">País*:</label>
                             <select id="nacionalidde" name="nacionalidade">
                                 <option value="brasil">Brasil</option>
                                 <option value="outros">Outros paises</option>
-                            </select><br>
-                            <label for="nacionalidde">UF*:</label><br>
+                            </select>
+                            <label for="nacionalidde">UF*:</label>
                             <select id="nacionalidde" name="nacionalidade">
                                 <option value=""></option>
                                 <option value="Ceara">Ceará</option>
@@ -169,21 +169,23 @@
                             </select>
                             <h2>Nomes anteriores</h2>
                             <div>
-                                <label for="nome-anterior">Nome anteriores:</label><br>
-                                <input type="text" id="nome-anterior" name="nome-anterior"><br>
+                                <label for="nome-anterior">Nome anteriores:</label>
+                                <input type="text" id="nome-anterior" name="nome-anterior">
 
-                                <label for="motivo">Motivo da mudança:</label><br>
+                                <label for="motivo">Motivo da mudança:</label>
                             <select id="motivo" name="motivo">
                                 <option value=""></option>
                                 <option value="Ceara">Ceará</option>
                                 <option value="Piauí">Piauí</option>
                             </select>
-                        </div>
 
-                            <button type="submit">Adicionar</button>
+                            <button type="submit">Adicionar</button><br>
                         </div>
+                        <br>
                         <button type="submit">PRÓXIMO</button>
                     </form>
+                </fieldset>
+
                 </div>
             </div>
             

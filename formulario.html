@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Web com Painel</title>
+    <style>
+        /* Estilos gerais */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Painel de menu */
+        .menu-panel {
+            display: flex;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            justify-content: space-around;
+        }
+        .menu-panel a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            transition: background-color 0.3s;
+        }
+        .menu-panel a:hover {
+            background-color: #575757;
+        }
+
+        /* Abas */
+        .tab {
+            display: flex;
+            background-color: #f1f1f1;
+            border-bottom: 2px solid #ccc;
+        }
+        .tab button {
+            flex: 1;
+            padding: 14px;
+            border: none;
+            cursor: pointer;
+            background-color: #f1f1f1;
+            transition: background-color 0.3s;
+        }
+        .tab button.active {
+            background-color: #ccc;
+        }
+        .tab button:hover {
+            background-color: #ddd;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+        }
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Formulários */
+        form {
+            max-width: 500px;
+            margin: auto;
+        }
+        form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        form input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+        }
+        form button {
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        form button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        function openTab(event, tabName) {
+            const tabContents = document.querySelectorAll(".tab-content");
+            const tabButtons = document.querySelectorAll(".tab button");
+
+            tabContents.forEach(content => content.classList.remove("active"));
+            tabButtons.forEach(button => button.classList.remove("active"));
+
+            document.getElementById(tabName).classList.add("active");
+            event.currentTarget.classList.add("active");
+        }
+    </script>
+</head>
+<body>
+    <!-- Painel de menus -->
+    <div class="menu-panel">
+        <a href="#">Conteúdo</a><span>1</span>
+        <a href="#">Menu</a><span>2</span>
+        <a href="#">Fim</a><span>3</span>
+        <a href="#">Acessibilidade</a><span>4</span>
+        <a href="#">Alto Contraste</a><span>5</span>
+    </div>
+
+    <!-- Abas -->
+    <div class="tab">
+        <button class="active" onclick="openTab(event, 'dados-pessoais')">Dados Pessoais</button>
+        <button onclick="openTab(event, 'documentos')">Documentos</button>
+        <button onclick="openTab(event, 'dados-complementares')">Dados Complementares</button>
+        <button onclick="openTab(event, 'revisar-dados')">Revisar Dados</button>
+    </div>
+
+    <div id="dados-pessoais" class="tab-content active">
+        <h2>Dados Pessoais</h2>
+        <form>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="idade">Idade:</label>
+            <input type="number" id="idade" name="idade">
+
+            <label for="endereco">Endereço:</label>
+            <input type="text" id="endereco" name="endereco">
+
+            <button type="submit">Salvar Dados Pessoais</button>
+        </form>
+    </div>
+
+    <div id="documentos" class="tab-content">
+        <h2>Documentos</h2>
+        <form>
+            <label for="cpf">CPF:</label>
+            <input type="text" id="cpf" name="cpf">
+
+            <label for="rg">RG:</label>
+            <input type="text" id="rg" name="rg">
+
+            <button type="submit">Salvar Documentos</button>
+        </form>
+    </div>
+
+    <div id="dados-complementares" class="tab-content">
+        <h2>Dados Complementares</h2>
+        <form>
+            <label for="profissao">Profissão:</label>
+            <input type="text" id="profissao" name="profissao">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+
+            <label for="endereco">Endereço:</label>
+            <input type="text" id="endereco" name="endereco">
+
+            <button type="submit">Salvar Dados Complementares</button>
+        </form>
+    </div>
+
+    <div id="revisar-dados" class="tab-content">
+        <h2>Revisar Dados</h2>
+        <p>Os dados cadastrados nos formulários serão exibidos aqui.</p>
+    </div>
+</body>
+</html>
